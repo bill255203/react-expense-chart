@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --Soft_red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+  --Dark_brown: hsl(25, 47%, 15%);
+  --Medium_brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --pale_orange: hsl(33, 100%, 98%);
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--Cream);
+  justify-content: center;
+  align-items: center;
+}
+h2,
+h4,
+p {
+  margin-block: 0.25em;
+}
+.top-box {
+  background-color: var(--Soft_red);
+  padding: 0.5rem 2rem;
+  width: min(400px, 80%);
+  margin-inline: auto;
+  border-radius: 1rem;
+  margin-top: 15vh;
+  .split {
+    display: flex;
+    .right {
+      margin-left: auto;
+    }
+  }
+}
+
+.bot-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--pale_orange);
+  height: 22.5em;
+  width: min(400px, 80%);
+  margin: 20px auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  .up {
+    margin: 0;
+  }
+  .mid {
+    .chart {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      width: 100%;
+      height: 200px;
+      margin-top: 1.5em;
+      .days {
+        &:hover {
+          .bar {
+            background-color: var(--Cyan);
+          }
+          .day {
+            font-weight: bold;
+          }
+        }
+        //what i learned: transition must have an initial state
+        //Every desired element has to have its own transition property
+        //which is (which property,time,conversion method)
+        .bar {
+          background-color: var(--Soft_red);
+          width: 2em;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+        }
+        .day {
+          text-align: center;
+          font-weight: normal;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  .split {
+    display: flex;
+    //here problem
+    margin-top: auto;
+    .right {
+      text-align: right;
+      margin-top: auto;
+      margin-left: auto;
+    }
+  }
+}
+.attribution {
+  text-align: center;
+}
